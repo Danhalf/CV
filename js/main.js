@@ -1,4 +1,4 @@
-const squares = document.querySelector('.squares');
+const squares = document.querySelector('.graph__squares');
 const technologies = document.querySelectorAll('.technologies__item');
 
 technologies.forEach(tech => {

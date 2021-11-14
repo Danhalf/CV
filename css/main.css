@@ -22,6 +22,7 @@ html {
   max-width: 1000px;
   margin: 20px auto;
 }
+
 /* ============== page ===============*/
 .cv {
   display: grid;
@@ -38,7 +39,7 @@ html {
   color: #fff;
 }
 
-.cv__sidebar a  {
+.cv__sidebar a {
   color: inherit;
   text-decoration: none;
 }
@@ -57,12 +58,25 @@ html {
   margin-right: 6px;
 }
 
+.information__item {
+  transition: 0.4s;
+}
+
+.information__item a:hover {
+  color: var(--content-color);
+}
+
 /* ============== skills ===============*/
 
-.technologies { grid-area: technologies; }
-.squares { grid-area: squares; }
+.technologies {
+  grid-area: technologies;
+}
 
-.graph {
+.graph__squares {
+  grid-area: squares;
+}
+
+.skills__graph {
   display: inline-grid;
   grid-template-areas: "technologies squares";
   grid-template-columns: auto 1fr;
@@ -71,11 +85,11 @@ html {
   color: var(--content-color);
 }
 
-.graph ul {
+.skills__graph ul {
   padding: 4px;
 }
 
-.graph li {
+.skills__graph li {
   list-style: none;
   transition: 0.5s;
 }
@@ -86,40 +100,41 @@ html {
 /*  grid-gap: var(--square-gap);*/
 /*  grid-template-rows: repeat(7, var(--square-size));*/
 /*}*/
-.squares ul {
+.graph__squares ul {
   display: flex;
 }
-.squares ul li{
+
+.graph__squares ul li {
   width: var(--square-size);
   height: var(--square-size);
 }
 
-.squares {
+.graph__squares {
   grid-auto-flow: column;
   grid-auto-columns: var(--square-size);
 }
 
-.graph {
+.skills__graph {
   border: 1px #e1e4e8 solid;
 }
 
-.squares ul li {
+.graph__squares ul li {
   background-color: #ebedf0;
 }
 
-.squares ul li[data-level="0"] {
+.graph__squares ul li[data-level="0"] {
   background-color: #fff;
 }
 
-.squares ul li[data-level="1"] {
+.graph__squares ul li[data-level="1"] {
   background-color: #c6e48b;
 }
 
-.squares ul li[data-level="2"] {
+.graph__squares ul li[data-level="2"] {
   background-color: #7bc96f;
 }
 
-.squares ul li[data-level="3"] {
+.graph__squares ul li[data-level="3"] {
   background-color: #196127;
 }
 
@@ -143,12 +158,49 @@ html {
   transform: scale(1);
 }
 
+.content__skills {
+  display: grid;
+  grid-template-areas: 'title title' 'graph other';
+  column-gap: 10px;
+}
+
+.content__skills .text__additional {
+  margin-bottom: 10px;
+}
+
+.content__skills .text__list {
+  margin: 0;
+  padding: 0;
+
+}
+
+.skills__other {
+  border: 1px #e1e4e8 solid;
+}
+
+.content__skills .list__item {
+  list-style: none;
+}
+
+.content__title {
+  grid-area: title;
+}
+
+.skills__graph {
+  grid-area: graph;
+}
+
+.skills__other {
+  grid-area: other;
+}
+
 .content__about:hover,
 .content__skills:hover,
 .content__experience:hover,
 .content__education:hover {
   transform: scale(1.03);
 }
+
 
 .content__education {
   margin-bottom: 0;
@@ -165,6 +217,11 @@ html {
 
 /* ============== @@media ===============*/
 
+@media (max-width: 910px) {
+  .content__skills {
+    grid-template-areas: 'title' 'graph' 'other';
+  }
+}
 @media (max-width: 590px) {
 
   :root {
