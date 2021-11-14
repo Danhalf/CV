@@ -30,12 +30,3 @@ listFilled('.react', 13)
 listFilled('.cms', 10)
 
 
-// const addSquares = (delay) => setTimeout(() => {
-//   let level
-//   level = Math.floor(1 + Math.random() * 2);
-//   squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
-// }, 50 * delay)
-//
-// for (let i = 1; i < 70; i++) {
-//   addSquares(i)
-// }

@@ -132,10 +132,6 @@ html {
   align-items: center;
 }
 
-.skills__graph ul:not(:last-child) {
-  /*margin-bottom: 1px;*/
-  /*padding-bottom: 1px;*/
-}
 
 .graph__squares ul li:not(:last-child) {
   background-color: #ebedf0;
@@ -238,6 +234,8 @@ html {
   color: rgba(0, 0, 0, 0.63);
   font-size: 0.9rem;
 }
+
+
 
 /* ============== @@media ===============*/
 
