@@ -9,10 +9,15 @@ technologies.forEach(tech => {
 
 const listFilled = (selector, count) => {
     for (let i = 1; i < 20; i++) {
-      let level;
-      i <= count ? level = Math.floor(1 + Math.random() * 2) : level = 0;
+      const level = i <= count ?  Math.floor(1 + Math.random() * 3) :  0;
       const parrent = document.querySelector(selector)
-      parrent.insertAdjacentHTML('beforeend', `<li data-level="${ level }"></li>`);
+      const li = document.createElement('li')
+      parrent.append(li)
+      li.setAttribute('data-level', 0)
+      setTimeout(()=> {
+       li.setAttribute('data-level', level)
+      }, Math.random() * 2000)
+
     }
 }
 

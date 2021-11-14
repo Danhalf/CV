@@ -19,7 +19,7 @@ html {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 20px auto;
 }
 
@@ -66,7 +66,20 @@ html {
   color: var(--content-color);
 }
 
+.languages__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__lang {
+  margin-right: 4px;
+}
+
 /* ============== skills ===============*/
+
+.graph__technologies {
+  line-height: 1.1;
+}
 
 .technologies {
   grid-area: technologies;
@@ -86,7 +99,7 @@ html {
 }
 
 .skills__graph ul {
-  padding: 4px;
+  padding: 1px;
 }
 
 .skills__graph li {
@@ -94,12 +107,6 @@ html {
   transition: 0.5s;
 }
 
-/*.technologies,*/
-/*.squares {*/
-/*  display: grid;*/
-/*  grid-gap: var(--square-gap);*/
-/*  grid-template-rows: repeat(7, var(--square-size));*/
-/*}*/
 .graph__squares ul {
   display: flex;
 }
@@ -118,8 +125,21 @@ html {
   border: 1px #e1e4e8 solid;
 }
 
-.graph__squares ul li {
+.graph__technologies, .graph__squares {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills__graph ul:not(:last-child) {
+  /*margin-bottom: 1px;*/
+  /*padding-bottom: 1px;*/
+}
+
+.graph__squares ul li:not(:last-child) {
   background-color: #ebedf0;
+  margin-right: 1px;
 }
 
 .graph__squares ul li[data-level="0"] {
@@ -192,6 +212,10 @@ html {
 
 .skills__other {
   grid-area: other;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__about:hover,
@@ -228,8 +252,8 @@ html {
     --square-size: 10px;
   }
 
-  .content__skills {
-    line-height: 1.15;
+  .graph__technologies {
+    line-height: 0.8;
   }
 
   .cv {
@@ -242,7 +266,7 @@ html {
     --square-size: 9px;
   }
 
-  .content__skills {
-    line-height: 1;
+  .graph__technologies {
+    line-height: 0.7;
   }
 }
